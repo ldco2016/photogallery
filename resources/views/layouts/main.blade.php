@@ -19,9 +19,14 @@
             <h5>Main Menu</h5>
 			<ul class="side-nav">
 				<li><a href="/">Home</a></li>
-				<li><a href="/login">Login</a></li>
-				<li><a href="/register">Register</a></li>
-				<li><a href="/gallery/create">Create Gallery</a></li>
+        <?php if(!Auth::check()) : ?>
+				  <li><a href="/login">Login</a></li>
+				  <li><a href="/register">Register</a></li>
+        <?php endif; ?>
+        <?php if(Auth::check()) : ?>
+				  <li><a href="/gallery/create">Create Gallery</a></li>
+          <li><a href="/logout">Logout</a></li>
+        <?php endif; ?>
 			</ul>
           </div>
         </div>
@@ -30,7 +35,7 @@
           <div class="title-bar hide-for-large">
             <div class="title-bar-left">
               <button class="menu-icon" type="button" data-open="my-info"></button>
-              <span class="title-bar-title">Mike Mikerson</span>
+              <span class="title-bar-title">Daniel Cortes</span>
             </div>
           </div>
       @if(Session::has('message'))
