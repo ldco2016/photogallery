@@ -7,7 +7,7 @@ use DB;
 
 class GalleryController extends Controller
 {
-	// Set Tablename
+	// // Set Tablename
 	private $table = 'galleries';
 
     // List Galleries
@@ -55,16 +55,16 @@ class GalleryController extends Controller
     	\Session::flash('message', 'Gallery added');
 
     	// Redirect
-    	return \Redirect::route('gallery.index')->with('message', 'Gallery Created');
+    	return \Redirect::route('gallery.index');
     }
 
     // Show Gallery Photos
     public function show($id){
-    	// Get Gallery
+    	// // Get Gallery
     	$gallery = DB::table($this->table)->where('id', $id)->first();
-    	// Get Photos
+    	// // Get Photos
     	$photos = DB::table('photos')->where('gallery_id', $id)->get();
-    	// Render View
+    	// // Render View
     	return view('gallery/show', compact('gallery', 'photos'));
     }
 }
