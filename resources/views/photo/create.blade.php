@@ -11,16 +11,19 @@
           	<div class="main">
           		{!! Form::open(array('action' => 'PhotoController@store', 'enctype' => 'multipart/form-data')) !!}
 					{!! Form::label('title', 'Title') !!}
-					{!! Form::text('name', $value = null, $attributes = ['placeholder' => 'Gallery name', 'name' => 'name']) !!}
+					{!! Form::text('title', $value = null, $attributes = ['placeholder' => 'Photo Title', 'name' => 'title']) !!}
 
 					{!! Form::label('description', 'Description') !!}
-					{!! Form::text('description', $value = null, $attributes = ['placeholder' => 'Gallery Description', 'name' => 'description']) !!}
+					{!! Form::text('description', $value = null, $attributes = ['placeholder' => 'Photo Description', 'name' => 'description']) !!}
 
           {!! Form::label('location', 'Location') !!}
-          {!! Form::text('location', $value = null, $attributes = ['placeholder' => 'Gallery Description', 'name' => 'description']) !!}
+          {!! Form::text('location', $value = null, $attributes = ['placeholder' => 'Photo Location', 'name' => 'location']) !!}
 
-					{!! Form::label('cover_image', 'Cover Image') !!}
-					{!! Form::file('cover_image') !!}
+					{!! Form::label('image', 'Photo') !!}
+					{!! Form::file('image') !!}
+
+          <input type="hidden" name="gallery_id" value="{{$gallery_id}}">
+
 					{!! Form::submit('Submit', $attributes = ['class' => 'button']) !!}
           		{!! Form::close() !!}
           	</div>

@@ -40,7 +40,7 @@ class PhotoController extends Controller
                 'description'   =>  $description,
                 'location'      =>  $location,
                 'gallery_id'    =>  $gallery_id,
-                'cover_image'   =>  $image_filename,
+                'image'         =>  $image_filename,
                 'owner_id'      =>  $owner_id
             ]
         );
